@@ -21,5 +21,6 @@ import { AppController } from './app.controller';
     AuthModule,
   ],
   controllers: [AppController],
+  
 })
 export class AppModule {}

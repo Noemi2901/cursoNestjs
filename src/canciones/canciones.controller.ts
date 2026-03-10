@@ -1,12 +1,13 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete,Put } from '@nestjs/common';
 import { CancionesService } from './canciones.service';
+import { CreateCancioneDto } from './dto/create-cancione.dto';
 
 @Controller('canciones')
 export class CancionesController {
     constructor(private service:CancionesService){}
 
     @Post()
-    create(@Body() body){
+    create(@Body() body:CreateCancioneDto){
       return this.service.create(body);
     }
 

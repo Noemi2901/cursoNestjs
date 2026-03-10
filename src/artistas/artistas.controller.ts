@@ -1,11 +1,18 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete,Put} from '@nestjs/common';
 import { ArtistasService } from './artistas.service';
+import { CreateArtistaDto } from './dto/create-artista.dto';
 
 
 @Controller('artistas')
 export class ArtistasController {
   
     constructor(private service:ArtistasService){}
+
+    @Post()
+    create(@Body() body:CreateArtistaDto){
+      return this.service.create(body);
+    }
+
 
     @Get()
     findAll(){
