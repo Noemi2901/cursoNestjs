@@ -6,6 +6,10 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
+  home() {
+    return { message: 'API Music funcionando correctamente' };
+  }
+  @Get()
   getHello(): string {
     return this.appService.getHello();
   }
