@@ -14,13 +14,18 @@ export class AuthService {
     private jwtService:JwtService
   ){}
 
-  async register(data){
-    const hash = await bcrypt.hash(data.password,10)
-    const user = await this.repo.save({
-      ...data,
-      password:hash
-    })
-    return user
+  async register(data: any) {
+
+      if (!data || !data.password) {
+        throw new Error('Password requerido');
+      }
+      const hash = await bcrypt.hash(data.password, 10);
+      const user = await this.repo.save({
+        ...data,
+        password: hash
+      });
+
+      return user;
   }
 
   async login(nombre,password){
