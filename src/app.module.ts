@@ -3,6 +3,7 @@ import { AuthModule } from './auth/auth.module';
 import { ArtistasModule } from './artistas/artistas.module';
 import { CancionesModule } from './canciones/canciones.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
@@ -19,5 +20,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     CancionesModule,
     AuthModule,
   ],
+  controllers: [AppController],
 })
 export class AppModule {}

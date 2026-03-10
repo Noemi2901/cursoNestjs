@@ -9,8 +9,4 @@ export class AppController {
   home() {
     return { message: 'API Music funcionando correctamente' };
   }
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
-  }
 }
